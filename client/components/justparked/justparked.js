@@ -4,10 +4,10 @@ import { Grid, Row, Col, ButtonToolbar, Button, Form } from 'react-bootstrap';
 
 class Justparked extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {phone: '', email: ''};
-    }
+  constructor(props) {
+    super(props);
+    this.state = {phone: localStorage.phone, email: localStorage.email};
+  }
 
   handleChangePhone = (event) => {
     this.setState({phone: event.target.value});
@@ -18,7 +18,7 @@ class Justparked extends Component {
   }
 
   handleSubmit = (event) => {
-    //alert('A phone number was submitted: ' + this.state.value);
+//    alert('A phone number was submitted: ' + this.state.value);
     event.preventDefault();
 
     this.props.justParked(this.state);

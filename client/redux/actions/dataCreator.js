@@ -27,7 +27,8 @@ export const loadData = () => {
 
 export const justParked = (info) => {
     return (dispatch) => {
-        console.log(info)
+        localStorage.setItem("email", info.email)
+        localStorage.setItem("phone", info.phone)
         return setAlert(info, (err, data) => {
             if (!err) {
                 dispatch(showModal(data));
