@@ -1,0 +1,26 @@
+@import '../../sass/globals';
+@import '../../sass/mixins';
+
+.ui-header {
+    color: #fff;
+    font-size: 30px;
+    padding: 15px 0;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #e0e3e8;
+
+    img {
+        width: 200px;
+    }
+
+    &:after {
+        content: "";
+        position:absolute;
+        width:100%;
+        bottom:1px;
+        z-index:-1;
+        box-shadow: 0px 0px 3px 2px #ccc;
+        left: 0;
+    }
+}
