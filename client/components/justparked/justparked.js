@@ -1,3 +1,4 @@
+require('./justparked.scss');
 import React, { Component } from 'react';
 import { Grid, Row, Col, ButtonToolbar, Button, Form } from 'react-bootstrap';
 
@@ -17,24 +18,25 @@ class Justparked extends Component {
   }
 
     handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('An email was submitted: ' + this.state.value);
     event.preventDefault();
   }
 
   render() {
     return (
-      <Grid className="home">
-         <Row className="home-header">
+      <Grid className="park">
+         <Row className="park-header">
             <Col xs={3}></Col>
             <Col xs={6}>
-            <h1>Welcome to Sweep Alert Chicago</h1>
-            <h6>enter your email to get notifications</h6>
+            <img src="/static/SweepAlert.png"/>
+            <h1 className="welcome">Sweep Alert Chicago</h1>
+            <h3>enter your email to get notifications</h3>
                <form onSubmit={this.handleSubmit}>
                  <label>
-                    Email:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    Email: <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
-                    <input type="submit" value="Submit" />
+                <br/>
+                    <input type="submit" value="JUST PARKED" className="submit"/>
                 </form>
             </Col>
            <Col xs={3}></Col>
