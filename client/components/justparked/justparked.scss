@@ -1,0 +1,23 @@
+.park {
+    .park-header {
+        margin-top: 17%;
+        color: #7f8c8d;
+        text-align: center;
+    }
+    
+    .welcome {
+       color: #e74c3c;
+       font-style: bold;
+    }
+    .submit {
+       background-color:#95a5a6;
+       border-radius: 11px;
+       padding: 5px 10px 5px 10px;
+       font-size: 15px;
+       color: #eee;       
+    }
+    .submit:hover {
+       color: #e74c3c;
+    }
+    margin-bottom: 40px;
+}

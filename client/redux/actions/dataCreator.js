@@ -1,4 +1,4 @@
-import { getData } from '../../services/dataService';
+import { getData, setAlert } from '../../services/dataService';
 import { showLoader, hideLoader } from './loadingCreator';
 
 export const DATA_LOADED = 'DATA_LOADED';
@@ -20,6 +20,19 @@ export const loadData = () => {
                 throw(err);
             }
             dispatch(hideLoader());
+        });
+    }
+}
+
+export const justParked = (info) => {
+    return (dispatch) => {
+        console.log(info)
+        return setAlert(info, (err, data) => {
+            if (!err) {
+
+            } else {
+                throw(err);
+            }
         });
     }
 }

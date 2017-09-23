@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, ButtonToolbar, Button } from 'react-bootstrap';
 import Map from '../map/Map.js';
+import Justparked from '../justparked/justparked.js';
 
 require('./home.scss');
 
@@ -12,20 +13,20 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { data, location, locationLoaded } = this.props;
+        const { data, location, locationLoaded, justParked } = this.props;
 
         return (
             <Grid className="home">
                 <Row className="home-header">
-                    <Col xs={6} style={{width: '100%', height: '500px'}}>
-                        <Map
+                    <Col xs={6}>
+                    <Justparked justParked={justParked} />
+                    <Map
                         location={location}
                         locationLoaded={locationLoaded}
-                        ></Map>
+                    ></Map>
                     </Col>
                 </Row>
             </Grid>
-
         );
     }
 }
