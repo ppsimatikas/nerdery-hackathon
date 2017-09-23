@@ -1,5 +1,4 @@
 import Hapi from 'hapi';
-import Good from 'good';
 import requireAll from 'require-all';
 import config from './config/default';
 import _ from 'lodash';
