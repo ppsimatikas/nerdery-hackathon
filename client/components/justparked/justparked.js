@@ -28,11 +28,8 @@ class Justparked extends Component {
     return (
       <Grid className="park">
          <Row className="park-header">
-            <Col xs={3}></Col>
-            <Col xs={6}>
-            <img src="/static/SweepAlert.png"/>
-            <h1 className="welcome">Sweep Alert Chicago</h1>
-            <h3>enter your mobile number to get notifications</h3>
+            <Col xs={12}>
+                <h3>Enter your email / mobile number to get notifications</h3>
                <form onSubmit={this.handleSubmit}>
                <label>
                     Email: <input type="text" value={this.state.email} onChange={this.handleChangeEmail} />
@@ -44,7 +41,6 @@ class Justparked extends Component {
                     <input type="submit" value="JUST PARKED" className="submit"/>
                 </form>
             </Col>
-           <Col xs={3}></Col>
         </Row>
      </Grid>
     );

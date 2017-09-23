@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
+require('./map.scss');
+
 const Marker = () => <svg><circle cx="100" cy="100" r="5"/></svg>;
 
 function getLocation(locationLoaded) {
@@ -29,18 +31,18 @@ class Map extends Component {
   render() {
     const { location } = this.props;
 
-console.log(location);
-
     return (
-      <GoogleMapReact
-        center={location || CENTER_OF_CHICAGO}
-        zoom={15}
-      >
-        { location ? <Marker
-          lat={location.lat}
-          lng={location.lng}
-        /> : null }
-      </GoogleMapReact>
+        <div className="map-sweep">
+          <GoogleMapReact
+            center={location || CENTER_OF_CHICAGO}
+            zoom={15}
+          >
+            { location ? <Marker
+              lat={location.lat}
+              lng={location.lng}
+            /> : null }
+          </GoogleMapReact>
+        </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import { getData, setAlert } from '../../services/dataService';
 import { showLoader, hideLoader } from './loadingCreator';
+import { showModal } from './modalCreator';
 
 export const DATA_LOADED = 'DATA_LOADED';
 
@@ -29,9 +30,9 @@ export const justParked = (info) => {
         console.log(info)
         return setAlert(info, (err, data) => {
             if (!err) {
-
+                dispatch(showModal(data));
             } else {
-                throw(err);
+                dispatch(showModal('An error occurred'));
             }
         });
     }
