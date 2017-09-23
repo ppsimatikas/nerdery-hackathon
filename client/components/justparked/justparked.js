@@ -6,20 +6,22 @@ class Justparked extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.state = {phone: '', email: ''};
     }
 
-    handleChange(event) {
-    this.setState({value: event.target.value});
+  handleChangePhone = (event) => {
+    this.setState({phone: event.target.value});
   }
 
-    handleSubmit(event) {
-    alert('An email was submitted: ' + this.state.value);
+    handleChangeEmail = (event) => {
+    this.setState({email: event.target.value});
+  }
+
+  handleSubmit = (event) => {
+    //alert('A phone number was submitted: ' + this.state.value);
     event.preventDefault();
+
+    this.props.justParked(this.state);
   }
 
   render() {
@@ -30,10 +32,13 @@ class Justparked extends Component {
             <Col xs={6}>
             <img src="/static/SweepAlert.png"/>
             <h1 className="welcome">Sweep Alert Chicago</h1>
-            <h3>enter your email to get notifications</h3>
+            <h3>enter your mobile number to get notifications</h3>
                <form onSubmit={this.handleSubmit}>
+               <label>
+                    Email: <input type="text" value={this.state.email} onChange={this.handleChangeEmail} />
+                </label>
                  <label>
-                    Email: <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    Mobile: <input type="text" value={this.state.phone} onChange={this.handleChangePhone} />
                 </label>
                 <br/>
                     <input type="submit" value="JUST PARKED" className="submit"/>

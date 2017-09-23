@@ -11,13 +11,13 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { data } = this.props;
+        const { data, justParked } = this.props;
 
         return (
             <Grid className="home">
                 <Row className="home-header">
                     <Col xs={6}>
-                        <Justparked />
+                        <Justparked justParked={justParked} />
                     </Col>
                 </Row>
             </Grid>
