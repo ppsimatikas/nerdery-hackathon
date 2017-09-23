@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, ButtonToolbar, Button } from 'react-bootstrap';
-require('./home.scss');
+import Map from '../map/Map.js';
 import Justparked from '../justparked/justparked.js';
+
+require('./home.scss');
 
 class Dashboard extends Component {
     constructor(props) {
@@ -11,13 +13,17 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { data, justParked } = this.props;
+        const { data, location, locationLoaded, justParked } = this.props;
 
         return (
             <Grid className="home">
                 <Row className="home-header">
                     <Col xs={6}>
-                        <Justparked justParked={justParked} />
+                    <Justparked justParked={justParked} />
+                    <Map
+                        location={location}
+                        locationLoaded={locationLoaded}
+                    ></Map>
                     </Col>
                 </Row>
             </Grid>
