@@ -27,6 +27,7 @@
     "config": "^1.25.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.1.2",
+    "google-map-react": "^0.24.0",
     "hapi": "^16.1.1",
     "hapi-react-views": "^9.3.0",
     "inert": "^4.0.2",
