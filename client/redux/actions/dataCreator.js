@@ -25,13 +25,17 @@ export const loadData = () => {
     }
 }
 
-export const justParked = (info) => {
+export const justParked = (info, location) => {
     return (dispatch) => {
         localStorage.setItem("email", info.email)
         localStorage.setItem("phone", info.phone)
-        return setAlert(info, (err, data) => {
+        return setAlert({
+            email: info.email,
+            phone: info.phone,
+            location
+        }, (err, data) => {
             if (!err) {
-                dispatch(showModal(data));
+                dispatch(showModal(data.message));
             } else {
                 dispatch(showModal('An error occurred'));
             }

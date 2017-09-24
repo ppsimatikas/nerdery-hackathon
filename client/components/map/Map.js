@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 require('./map.scss');
 
-const Marker = () => <svg><circle cx="100" cy="100" r="5"/></svg>;
+const Marker = () => <svg><circle cx="100" cy="100" r="8" fill="#ff4400"/></svg>;
 
 function getLocation(locationLoaded) {
     if (navigator.geolocation) {

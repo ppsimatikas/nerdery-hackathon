@@ -19,7 +19,9 @@ class Dashboard extends Component {
             <Grid className="home">
                 <Row className="home-header">
                     <Col xs={12}>
-                    <Justparked justParked={justParked} />
+                    <Justparked
+                        location={location}
+                        justParked={justParked} />
                     <Map
                         location={location}
                         locationLoaded={locationLoaded}

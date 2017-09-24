@@ -5,5 +5,5 @@ export function getData(callback) {
 }
 
 export function setAlert(info, callback) {
-    put('https://8wtfsna9kh.execute-api.us-east-1.amazonaws.com/v1', info, callback);
+    put('https://hgoz9y86d0.execute-api.us-east-1.amazonaws.com/v1', info, callback);
 }

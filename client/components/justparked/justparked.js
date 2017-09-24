@@ -21,7 +21,7 @@ class Justparked extends Component {
 //    alert('A phone number was submitted: ' + this.state.value);
     event.preventDefault();
 
-    this.props.justParked(this.state);
+    this.props.justParked(this.state, this.props.location);
   }
 
   render() {
@@ -38,7 +38,7 @@ class Justparked extends Component {
                     Mobile: <input type="text" value={this.state.phone} onChange={this.handleChangePhone} />
                 </label>
                 <br/>
-                    <input type="submit" value="JUST PARKED" className="submit"/>
+                    <input type="submit" value="JUST PARKED" className="submit btn btn-warning"/>
                 </form>
             </Col>
         </Row>
