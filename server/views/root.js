@@ -15,6 +15,7 @@ class App extends Component {
             </head>
             <body>
             <div id="app"/>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8KINg5P4Rj_OH5VenHce6DA9sF-PFriE" type="text/javascript"/>
             <script src="/static/app.bundle.js"/>
             </body>
             </html>

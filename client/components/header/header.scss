@@ -3,21 +3,24 @@
 
 .ui-header {
     color: #7f8c8d;
-    font-size: 30px;
-    padding-bottom: 15px;
     position: relative;
     margin: auto;
     text-align: center;
     background-color: #e0e3e8;
+    padding: 10px;
+
+    h1 {
+        margin: 0 0 0 10px;
+    }
 
     h1,
     img {
+        font-size: 20px;
         display: inline-block;
-        margin-left: 10px;
     }
 
     img {
-        width: 40px;
+        width: 20px;
     }
 
     &:after {

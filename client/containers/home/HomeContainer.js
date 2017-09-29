@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from '../../components/home/Home';
-import { loadData, justParked } from '../../redux/actions/dataCreator';
+import { justParked } from '../../redux/actions/dataCreator';
 import { locationLoaded } from '../../redux/actions/locationCreator';
 
 const mapStateToProps = (state) => ({
@@ -9,7 +9,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    loadData,
     locationLoaded,
     justParked
 })(Home);

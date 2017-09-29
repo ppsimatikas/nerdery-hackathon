@@ -1,51 +1,55 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import { maps as googleMaps } from 'googleMaps';
+import CurrentLocation from './CurrentLocation';
 
 require('./map.scss');
 
-const Marker = () => <svg><circle cx="100" cy="100" r="8" fill="#ff4400"/></svg>;
-
-function getLocation(locationLoaded) {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        console.log(pos);
-        locationLoaded(pos);
-      }, function() {
-      });
+function renderMarker(map, props) {
+    if (map) {
+        return <CurrentLocation map={map} {...props} />;
     }
 }
 
-const CENTER_OF_CHICAGO = {lat: 41.879558, lng: -87.630451};
+const CENTER_OF_CHICAGO = { lat: 41.879558, lng: -87.630451 };
 
-class Map extends Component {
-  constructor(props) {
-    super(props);
-    getLocation(props.locationLoaded);
-  }
-
-  render() {
-    const { location } = this.props;
-
-    return (
-        <div className="map-sweep">
-          <GoogleMapReact
-            center={location || CENTER_OF_CHICAGO}
-            zoom={15}
-          >
-            { location ? <Marker
-              lat={location.lat}
-              lng={location.lng}
-            /> : null }
-          </GoogleMapReact>
-        </div>
-    );
-  }
+function createMap(element, center, zoom) {
+    return new googleMaps.Map(element, {
+        center: center || CENTER_OF_CHICAGO,
+        zoom: zoom
+    });
 }
 
-// Export the component back for use in other files
+class Map extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            map: null
+        };
+    }
+
+    componentDidMount () {
+        this.setState({
+            map: createMap(document.getElementById('sweep-alert-map'), 0, 15)
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { map } = this.state;
+        if (map && nextProps.location !== this.props.location) {
+            map.setCenter(nextProps.location);
+        }
+    }
+
+    render() {
+        const { map } = this.state;
+
+        return (
+            <div id="sweep-alert-map" className="map-sweep">
+                {renderMarker(map, this.props)}
+            </div>
+        );
+    }
+}
+
 export default Map;

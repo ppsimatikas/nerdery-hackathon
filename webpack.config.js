@@ -40,6 +40,9 @@ module.exports = {
         path: path.resolve(__dirname, './.build/'),
         filename: 'app.bundle.js'
     },
+    externals: {
+        googleMaps: 'google'
+    },
     module: {
         rules: [
             {
@@ -56,15 +59,20 @@ module.exports = {
                 }
             },
             {
-            test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-                use: [{
-                    loader: 'css-loader'
-                }, {
-                    loader: 'sass-loader'
-                }]
-            })
-        }]
+                test: /\.(css|scss)$/,
+                use: ExtractTextPlugin.extract({
+                    use: [{
+                        loader: 'css-loader'
+                    }, {
+                        loader: 'sass-loader'
+                    }]
+                })
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader'
+            }
+        ]
     },
     plugins: plugins
 };

@@ -1,5 +1,5 @@
 
-[{"dates":"8,9,24","month_name":"NOVEMBER","month_number":"9","section":"15","ward":"04","ward_section_concatenated":"0415"}
+[{"dates":"8,9","month_name":"NOVEMBER","month_number":"11","section":"15","ward":"04","ward_section_concatenated":"0415"}
 ,{"dates":"15,16","month_name":"NOVEMBER","month_number":"11","section":"05","ward":"49","ward_section_concatenated":"4905"}
 ,{"dates":"2,3,9,10,16,17,23,24,30,31","month_name":"MAY","month_number":"5","section":"06","ward":"42","ward_section_concatenated":"4206"}
 ,{"dates":"19,20","month_name":"APRIL","month_number":"4","section":"07","ward":"04","ward_section_concatenated":"0407"}
@@ -237,7 +237,7 @@
 ,{"dates":"20,21","month_name":"JULY","month_number":"7","section":"04","ward":"45","ward_section_concatenated":"4504"}
 ,{"dates":"22,23","month_name":"MAY","month_number":"5","section":"02","ward":"39","ward_section_concatenated":"3902"}
 ,{"dates":"19,22","month_name":"MAY","month_number":"5","section":"03","ward":"04","ward_section_concatenated":"0403"}
-,{"dates":"21,22,24,23","month_name":"AUGUST","month_number":"9","section":"10","ward":"12","ward_section_concatenated":"1210"}
+,{"dates":"21,22","month_name":"AUGUST","month_number":"8","section":"10","ward":"12","ward_section_concatenated":"1210"}
 ,{"dates":"6,7","month_name":"SEPTEMBER","month_number":"9","section":"09","ward":"04","ward_section_concatenated":"0409"}
 ,{"dates":"11,12","month_name":"APRIL","month_number":"4","section":"02","ward":"41","ward_section_concatenated":"4102"}
 ,{"dates":"21,22","month_name":"SEPTEMBER","month_number":"9","section":"08","ward":"47","ward_section_concatenated":"4708"}

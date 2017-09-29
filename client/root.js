@@ -7,7 +7,8 @@ import configureStore from './redux/configureStore';
 import getRoutes from './routes/routes';
 import App from './components/App';
 
-import styles from './sass/_globals.scss';
+require('bootstrap/dist/css/bootstrap.css');
+require('./sass/_globals.scss');
 
 const store = configureStore({
 });

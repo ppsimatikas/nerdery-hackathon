@@ -1,17 +1,10 @@
 .park {
-    .park-header {
-        color: #7f8c8d;
-        text-align: center;
-    }
-    
-    .welcome {
-       color: #e74c3c;
-       font-style: bold;
-    }
-    margin-bottom: 20px;
+    text-align: center;
 
-    label{
-        margin: 10px;
+    margin-bottom: 10px;
+
+    .input-item{
+        margin: 10px 0;
     }
 }
 

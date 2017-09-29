@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         return (
             <header className="ui-header">
-                <img src="/static/SweepAlert.png"/>
+                <img src="/SweepAlert.png"/>
                 <h1 className="welcome">Sweep Alert Chicago</h1>
             </header>
         );

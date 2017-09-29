@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, ButtonToolbar, Button } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import Map from '../map/Map.js';
 import Justparked from '../justparked/justparked.js';
 
@@ -8,8 +8,6 @@ require('./home.scss');
 class Dashboard extends Component {
     constructor(props) {
         super(props);
-
-        props.loadData();
     }
 
     render() {

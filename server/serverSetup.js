@@ -8,7 +8,7 @@ let server = new Hapi.Server();
 function loadControllers() {
     server.route({
         method: 'GET',
-        path: '/static/{params*}',
+        path: '/{params*}',
         config: {
             auth: false
         },

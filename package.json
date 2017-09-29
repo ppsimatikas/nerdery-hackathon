@@ -6,6 +6,7 @@
   "scripts": {
     "webpack": "webpack -p",
     "webpack:watch": "webpack -d --watch",
+    "deploy": "webpack -p && node ./scripts/deploy.js",
     "start": "node ./index.js",
     "start:watch": "nodemon --exec 'node ./index.js'",
     "start:dev": "set NODE_ENV=dev&& npm-run-all --parallel webpack:watch start:watch"
@@ -24,11 +25,11 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.24.1",
     "boom": "^5.1.0",
+    "bootstrap": "^3.3.7",
     "chance": "^1.0.9",
     "config": "^1.25.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.1.2",
-    "google-map-react": "^0.24.0",
     "hapi": "^16.1.1",
     "hapi-react-views": "^9.3.0",
     "inert": "^4.0.2",
@@ -54,6 +55,7 @@
     "require-all": "^2.2.0",
     "sass-loader": "^6.0.6",
     "terraformer": "^1.0.8",
+    "url-loader": "^0.5.9",
     "uuid": "^3.1.0",
     "vision": "^4.1.0",
     "webpack": "^2.2",

@@ -1,6 +1,6 @@
 import { SHOW_LOADER, HIDE_LOADER } from '../actions/loadingCreator';
 
-const initialState = false;
+const initialState = true;
 
 export default function reduce(state = initialState, action) {
     switch (action.type) {
