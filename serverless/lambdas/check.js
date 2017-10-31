@@ -8,10 +8,8 @@ const { notify } = require('./utils/notificationUtil');
 
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-const TableName = 'SweepAlert';
-
-
 module.exports = (event, context, callback) => {
+    const TableName = process.env.table;
     const success = { message: 'success' };
 
     getTomorrowsSchedule((tomorrowsSchedule) => {

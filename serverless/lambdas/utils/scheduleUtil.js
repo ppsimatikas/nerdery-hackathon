@@ -2,8 +2,6 @@ const fallbackSchedule = require('./sweep-schedule.json');
 const request = require('request');
 const moment = require('moment-timezone');
 
-const tomorrow = moment.tz('America/Chicago').add(1, 'days');
-
 function getSchedule(callback) {
     request.get({
         url: 'https://data.cityofchicago.org/resource/6qug-dskz.json',
@@ -14,6 +12,7 @@ function getSchedule(callback) {
 module.exports.getSchedule = getSchedule;
 
 module.exports.getTomorrowsSchedule = (callback) => {
+    const tomorrow = moment.tz('America/Chicago').add(1, 'days');
     const month = tomorrow.month() + 1;
     const date = tomorrow.date();
 

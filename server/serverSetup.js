@@ -1,7 +1,6 @@
 import Hapi from 'hapi';
-import requireAll from 'require-all';
-import config from './config/default';
-import _ from 'lodash';
+import config from 'config';
+import { getControllers } from './controllers/serverlessControllers';
 
 let server = new Hapi.Server();
 
@@ -19,10 +18,7 @@ function loadControllers() {
         }
     });
 
-    let controllers = requireAll(__dirname + '/controllers'),
-        routes = _.flatten(_.values(controllers).map(_.values));
-
-    server.route(routes);
+    server.route(getControllers());
 }
 
 server.connection({

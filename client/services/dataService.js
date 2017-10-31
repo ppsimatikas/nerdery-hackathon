@@ -1,9 +1,7 @@
-import { get, put } from './requestService';
+import { put } from './requestService';
 
-export function getData(callback) {
-    callback(null, 'Hello World');
-}
+const url = process.env.API_URL || '/api';
 
 export function setAlert(info, callback) {
-    put('https://hgoz9y86d0.execute-api.us-east-1.amazonaws.com/v1', info, callback);
+    put(`${url}/create`, info, callback);
 }

@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack -p",
+    "webpack": "NODE_ENV=production webpack -p",
     "webpack:watch": "webpack -d --watch",
-    "deploy": "webpack -p && node ./scripts/deploy.js",
+    "deploy:serverless": "cd serverless && serverless deploy && cd ..",
+    "undeploy:serverless": "cd serverless && serverless remove && cd ..",
+    "deploy": "node ./scripts/deploy.js",
     "start": "node ./index.js",
     "start:watch": "nodemon --exec 'node ./index.js'",
-    "start:dev": "set NODE_ENV=dev&& npm-run-all --parallel webpack:watch start:watch"
+    "start:dev": "npm-run-all --parallel webpack:watch start:watch"
   },
   "author": "",
   "license": "ISC",
@@ -53,13 +55,15 @@
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.2.0",
     "require-all": "^2.2.0",
+    "s3": "^4.4.0",
     "sass-loader": "^6.0.6",
     "terraformer": "^1.0.8",
     "url-loader": "^0.5.9",
     "uuid": "^3.1.0",
     "vision": "^4.1.0",
     "webpack": "^2.2",
-    "webpack-dev-server": "^2.2"
+    "webpack-dev-server": "^2.2",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",

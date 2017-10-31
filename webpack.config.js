@@ -1,8 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const isDev = JSON.parse(process.env.NODE_ENV === 'development');
-const isProd = JSON.parse(process.env.NODE_ENV === 'prd');
+const isProd = JSON.parse(process.env.NODE_ENV === 'production');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+console.log(process.env.NODE_ENV);
 
 const extractSass = new ExtractTextPlugin({
     filename: 'app.css',
@@ -14,7 +16,9 @@ const plugins = [
         debug: isDev
     }),
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env': {
+            'NODE_ENV': JSON.stringify('production')
+        }
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     extractSass

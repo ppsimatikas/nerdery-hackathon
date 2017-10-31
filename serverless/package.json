@@ -1,5 +1,5 @@
 {
-  "name": "nerdery-hackathon",
+  "name": "nerdery-hackathon-serverless",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,6 +22,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.24.1",
+    "config": "^1.25.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
